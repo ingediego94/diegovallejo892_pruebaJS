@@ -22,6 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //************************************************************************** */
 
 logout.addEventListener('click', ()=>{
-    alert('Hasta pronto');
+    alert('See you later, aligator!');
     window.location.href = 'login.html';
 })

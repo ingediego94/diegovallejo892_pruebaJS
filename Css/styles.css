@@ -191,10 +191,11 @@ tr td:last-child {
 
 
 /*ADD STUDENT */
-.addNewStudentSection{
+.addNewEventSection{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     background-color: var(--fondo);
     flex: 1; /* Ocupa el espacio restante */
@@ -300,4 +301,37 @@ tr td:last-child {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#edit-form button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/*NEW SECTION*/
+.newSection{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--fondo);
+    padding: 2rem;
+}
+
+.newSection img{
+    width: 20rem;
+    height: 15rem;
+    border-radius: 10px;
+}
+
+.nextEvent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }

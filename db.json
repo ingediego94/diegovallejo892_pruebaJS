@@ -13,6 +13,13 @@
       "description": "this event is for Carlolines wedding. It will be in a big church with many people, they are stimating around 259 people, but could be mor than 300. It will be in Baviera, near to the river. ",
       "date": "19/07/2026",
       "capacity": 259
+    },
+    {
+      "id": "3",
+      "name": "calos bustamante",
+      "description": "this event is for Carloline wedding. It will be in a big church.",
+      "date": "2025-10-23",
+      "capacity": 554
     }
   ]
 }

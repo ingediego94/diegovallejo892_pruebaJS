@@ -149,7 +149,7 @@ async function updateEvents(eventToUpdate){
 
 
 // Delete method
-async function deleteStudents(id){
+async function deleteEvents(id){
 
     try{
         const response = await fetch(`${url}/${id}`, {
@@ -178,7 +178,7 @@ document.addEventListener('click', async function (event) {
 
         if(confirm(` Are you sure of deleting event with ID number: ${id}?`)){
             try{
-                await deleteStudents(id);
+                await deleteEvents(id);
                 await getEvents();   // Refresh the table
             } catch (err) {
                 console.log('Error deleting event: ', err);
@@ -197,7 +197,7 @@ document.addEventListener('click', async function (event) {
             const data = await response.json();
             
             container.innerHTML = `
-                <form id="edit-form"><h4>Edit Booking:</h4><label>Name:</label><input type="text" value=${data.name} placeholder="${data.name}"></input><label>Description:</label><input type="text" value=${data.description} placeholder="${data.description}"></input><label>Date:</label><input type="date" value=${data.date} placeholder="${data.date}"></input><label>Capacity:</label><input type="number" value=${data.capacity} placeholder="${data.capacity}"></input><button type="submit">Save Edits</button></form>
+                <form id="edit-form"><h4>Edit Booking:</h4><label>Name:</label><input type="text" value="${data.name}" placeholder="${data.name}"></input><label>Description:</label><input type="text" value="${data.description}" placeholder="${data.description}"></input><label>Date:</label><input type="date" value=${data.date} placeholder="${data.date}"></input><label>Capacity:</label><input type="number" value=${data.capacity} placeholder="${data.capacity}"></input><button type="submit">Save Edits</button></form>
             `
             
             const form = document.getElementById('edit-form');
@@ -207,16 +207,16 @@ document.addEventListener('click', async function (event) {
 
                 const childrens = form.childNodes;
                 
-                const newStudent = {
+                const newEvent = {
                     id,
-                    name: childrens[2].value,
-                    description: childrens[4].value,
-                    date: childrens[6].value,
-                    capacity: childrens[8].value,
+                    name: childrens[2].value,       // its the second input because the first one is the h4
+                    description: childrens[4].value,    // its the fourth input because the third one is the label
+                    date: childrens[6].value,       // its the sixth input because the fifth one is the label
+                    capacity: childrens[8].value,   // its the eighth input because the seventh one is the label
                     
                 }
 
-                updateEvents(newStudent)
+                updateEvents(newEvent)
                 .then(res => window.location.reload())
                 .then(err => console.error(err))
             })
